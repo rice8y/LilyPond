@@ -1,21 +1,23 @@
 # LilyPond
 
-- [LilyPond](#lilypond)
-  - [LilyPondとは](#lilypondとは)
-  - [LilyPondの導入](#lilypondの導入)
-  - [LilyPondの使い方](#lilypondの使い方)
-    - [音符の表示](#音符の表示)
-    - [音部記号](#音部記号)
-      - [ト音記号(G clef)](#ト音記号g-clef)
-      - [へ音記号(F clef)](#へ音記号f-clef)
-      - [ハ音記号(C clef)](#ハ音記号c-clef)
-    - [音符](#音符)
-    - [付点音符](#付点音符)
-    - [付点休符](#付点休符)
-    - [休符](#休符)
-    - [変化記号](#変化記号)
-  - [LilyPondによる楽譜作成例](#lilypondによる楽譜作成例)
-    - [Hanon No.1](#hanon-no1)
+- [LilyPondとは](#lilypondとは)
+- [LilyPondの導入](#lilypondの導入)
+- [LilyPondの使い方](#lilypondの使い方)
+  - [音符の記述](#音符の記述)
+  - [ピッチ](#ピッチ)
+  - [テンポ記号](#テンポ記号)
+  - [音部記号](#音部記号)
+    - [ト音記号(G clef)](#ト音記号g-clef)
+    - [へ音記号(F clef)](#へ音記号f-clef)
+    - [ハ音記号(C clef)](#ハ音記号c-clef)
+  - [音符](#音符)
+  - [付点音符](#付点音符)
+  - [付点休符](#付点休符)
+  - [休符](#休符)
+  - [変化記号](#変化記号)
+  - [連符](#連符)
+- [LilyPondによる楽譜作成例](#lilypondによる楽譜作成例)
+  - [Hanon No.1](#hanon-no1)
 
 ## LilyPondとは
 
@@ -62,7 +64,7 @@ lilypond sample.ly
 
 以降では, LilyPindにおける楽譜の記述方法について述べる.
 
-### 音符の表示
+### 音符の記述
 
 以下の記述ではmidCが描画される. なお, ここではmidC=C4としている.
 
@@ -95,6 +97,34 @@ lilypond sample.ly
 <img src="images/img03.png" width="50%">
 
 相対音記法では, 直前の音に一番近い側の音から選択される. 上記の例では, 最初の音はmidCに近い側の音から選択され, それ以降の音に関しても同様(厳密には直前の音の近傍音を選択)である. 
+
+### ピッチ
+
+オクターブは`c'`, `c,`のように`'`, `,`で指定する. `'`はピッチを1オクターブ上げ, `,`はピッチを1オクターブ下げる.  
+
+```cmd
+\relative c' {
+    \clef treble
+    c c' c,
+}
+```
+
+<img src="images/c',.png" width="45%">
+
+### テンポ記号
+
+テンポ指示は`\tempo`, メトロノーム記号は`\time`で指定できる. 
+
+```cmd
+\relative c' {
+    \time 3/4
+    \tempo 4 = 108
+    \clef trble
+    c4 c c 
+}
+```
+
+<img src="images/tempo.png" width="45%">
 
 ### 音部記号
 
@@ -286,6 +316,19 @@ lilypond sample.ly
 ```
 
 <img src="images/sf.png" width="60%">
+
+### 連符
+
+連符を記述する方法はいくつかあるが, ここでは手動連桁について述べる. 手動連桁では`c [ c c ]`のように`[]`で連桁を指定する. 
+
+```cmd
+\relative c' {
+    \clef treble
+    c8 [ d e ]
+}
+```
+
+<img src="images/qua.png" width="45%">
 
 ## LilyPondによる楽譜作成例
 
