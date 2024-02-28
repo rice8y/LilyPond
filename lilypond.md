@@ -1,11 +1,21 @@
 # LilyPond
 
 - [LilyPond](#lilypond)
-- [LilyPondとは](#lilypondとは)
-- [LilyPondの導入](#lilypondの導入)
-- [LilyPondの使い方](#lilypondの使い方)
-- [LilyPondによる楽譜作成例](#lilypondによる楽譜作成例)
-  - [Hanon No.1](#hanon-no1)
+  - [LilyPondとは](#lilypondとは)
+  - [LilyPondの導入](#lilypondの導入)
+  - [LilyPondの使い方](#lilypondの使い方)
+    - [音符の表示](#音符の表示)
+    - [音部記号](#音部記号)
+      - [ト音記号(G clef)](#ト音記号g-clef)
+      - [へ音記号(F clef)](#へ音記号f-clef)
+      - [ハ音記号(C clef)](#ハ音記号c-clef)
+    - [音符](#音符)
+    - [付点音符](#付点音符)
+    - [付点休符](#付点休符)
+    - [休符](#休符)
+    - [変化記号](#変化記号)
+  - [LilyPondによる楽譜作成例](#lilypondによる楽譜作成例)
+    - [Hanon No.1](#hanon-no1)
 
 ## LilyPondとは
 
@@ -52,6 +62,231 @@ lilypond sample.ly
 
 以降では, LilyPindにおける楽譜の記述方法について述べる.
 
+### 音符の表示
+
+以下の記述ではmidCが描画される. なお, ここではmidC=C4としている.
+
+```cmd
+{ c' }
+```
+
+<img src="images/img00.png" width="60%">
+
+音階はスペース区切りで以下のように指定する.
+
+<img src="images/img01.png" width="60%">
+
+実際には小文字のアルファベットで音階を指定する.
+
+```cmd
+{ c' d g }
+```
+
+<img src="images/img02.png" width="45%">
+
+上の出力を見ると, d, gが1オクターブ下の音になっていることが分かる. これは, デフォルトで絶対音記法が指定されているためである. 
+
+相対音記法にするには以下のように記述する. 
+
+```cmd
+\relative c' { c d g }
+```
+
+<img src="images/img03.png" width="50%">
+
+相対音記法では, 直前の音に一番近い側の音から選択される. 上記の例では, 最初の音はmidCに近い側の音から選択され, それ以降の音に関しても同様(厳密には直前の音の近傍音を選択)である. 
+
+### 音部記号
+
+音部記号はト音記号, へ音記号, ハ音記号に大別される. 音部記号の指定には`\clef`を使う. 
+
+#### ト音記号(G clef)
+
+ト音記号には, フレンチヴァイオリン記号, トレブル記号がある.
+
+フレンチヴァイオリン記号：
+
+```cmd
+\relative c' {
+    \clef french
+    c1
+}
+```
+
+<img src="images/french.png" width="40%">
+
+トレブル記号：
+
+```cmd
+\relative c' {
+    \clef treble
+    c1
+}
+```
+
+<img src="images/treble.png" width="40%">
+
+#### へ音記号(F clef)
+
+ヘ音記号には, バリトン記号, バス記号, 低バス記号がある. 
+
+バリトン記号：
+
+```cmd
+\relative c' {
+    \clef varbaritone
+    c1
+}
+```
+
+<img src="images/varbaritone.png" width="45%">
+
+バス記号：
+
+```cmd
+\relative c' {
+    \clef bass
+    c1
+}
+```
+
+<img src="images/bass.png" width="45%">
+
+低バス記号：
+
+```cmd
+\relative c' {
+    \clef subbass
+    c1
+}
+```
+
+<img src="images/subbass.png" width="45%">
+
+#### ハ音記号(C clef)
+
+ハ音記号には, ソプラノ記号, メゾソプラノ記号, アルト記号, テノール記号, バリトン記号がある. ただし, LilyPondにおいてデフォルトで提供されているものは
+
+ソプラノ記号：
+
+```cmd
+\relative c' {
+    \clef soprano
+    c1
+}
+```
+
+<img src="images/soprano.png" width=40%>
+
+メゾソプラノ記号：
+
+```cmd
+\relative c' {
+    \clef mezzosoprano
+    c1
+}
+```
+
+<img src="images/mezzosoprano.png" width=40%>
+
+アルト記号：
+
+```cmd
+\relative c' {
+    \clef alto
+    c1
+}
+```
+
+<img src="images/alto.png" width=40%>
+
+テノール記号：
+
+```cmd
+\relative c' {
+    \clef tenor
+    c1
+}
+```
+
+<img src="images/tenor.png" width=40%>
+
+バリトン記号：
+
+```cmd
+\relative c' {
+    \clef baritone
+    c1
+}
+```
+
+<img src="images/baritone.png" width=40%>
+
+### 音符
+
+音符の長さは`c4`のように数字を付け加えて指定する. 
+
+```cmd
+\relative c' {
+    \clef treble
+    c1 c2 c4 c8 c16
+}
+```
+
+<img src="images/c1-32.png" width="90%">
+
+### 付点音符
+
+付点音符は`c.`のように`.`を付け加えて指定する. 
+
+```cmd
+\relative c' {
+    \clef treble
+    c2. c4. c8.
+}
+```
+
+<img src="images/c2.-8..png" width="50%">
+
+### 付点休符
+
+付点休符は`r.`のように`.`を付け加えて指定する. 
+
+```cmd
+\relative c' {
+    \clef treble
+    r2. r4. r8.
+}
+```
+
+<img src="images/r2.-8..png" width="50%">
+
+### 休符
+
+休符の長さは`r4`のように休符を指定する`r`に数字を付け加えて指定する. 
+
+```cmd
+\relative c' {
+    \clef treble
+    r1 r2 r4 r8 r16 r32
+}
+```
+
+<img src="images/r1-32.png" width="90%">
+
+### 変化記号
+
+変化記号には, シャープ, フラット, ダブルシャープ, ダブルフラット, ナチュラルがある. シャープは`cs`のように`s`を, フラットは`cf`のように`f`を, ダブルシャープは`css`のように`ss`を, ダブルフラットは`cff`のように`ff`を付け加えて指定する. また, ナチュラルは`cs cf c`のように(ダブル)シャープが(ダブル)フラットでキャンセルされた場合に自動で付加される. ただし, これらは設定言語が英語である場合(`\language "english"`)であり, その他の言語の場合は仕様が異なる点に注意されたい. 
+
+```cmd
+\relative c' {
+    \clef treble 
+    cs cf c css cff
+}
+```
+
+<img src="images/sf.png" width="60%">
+
 ## LilyPondによる楽譜作成例
 
 ### Hanon No.1
@@ -77,7 +312,7 @@ hanon01.ly：
 
 upper = \relative c'' {
   \time 2/4
-  \clef trable
+  \clef treble
   \tempo 4 = 108
   \numericTimeSignature
   s1 | s1 | g,16 [ b c d ] e16 [ d c b ] |
@@ -215,4 +450,9 @@ lower = \relative c {
 
 hanon01.pdf：
 
-![hanon01](hanon01.png)
+![hanon01](images/hanon01.png)
+
+MIDIをACCとMP3に変換したものを以下に示す.
+
+iOS, Android：[hanon01.acc](audio/hanon.acc)
+Windows, Mac：[hanon01.mp3](audio/hanon01.mp3)
