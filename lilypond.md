@@ -74,7 +74,7 @@ lilypond sample.ly
 
 音階はスペース区切りで以下のように指定する.
 
-<img src="images/img01.png" width="55%">
+<img src="images/img01.png" width="60%">
 
 実際には小文字のアルファベットで音階を指定する.
 
