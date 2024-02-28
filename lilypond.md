@@ -70,11 +70,11 @@ lilypond sample.ly
 { c' }
 ```
 
-<img src="images/img00.png" width="50%">
+<img src="images/img00.png" width="45%">
 
 音階はスペース区切りで以下のように指定する.
 
-<img src="images/img01.png" width="50%">
+<img src="images/img01.png" width="55%">
 
 実際には小文字のアルファベットで音階を指定する.
 
