@@ -70,7 +70,7 @@ lilypond sample.ly
 { c' }
 ```
 
-<img src="images/img00.png" width="60%">
+<img src="images/img00.png" width="50%">
 
 音階はスペース区切りで以下のように指定する.
 
