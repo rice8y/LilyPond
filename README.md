@@ -5,4 +5,4 @@
 
 また, [公式ドキュメント](https://lilypond.org/doc/v2.25/Documentation/web/manuals.ja.html)に詳細かつ分かりやすいマニュアルがあるため, LilyPondで楽譜を作成したい方はそちらを参照されたい. 
 
-Click on [lilypond.md](lilyppond.md)
+Click on [lilypond.md](lilypond.md)
