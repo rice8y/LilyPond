@@ -454,7 +454,7 @@ hanon01.pdf：
 
 MIDIをACCとMP3に変換したものを以下に示す.
 
-iOS, Android：[hanon01.aac](audio/hanon01.aac)
+iOS, Android：[hanon01.aac](https://github.com/rice8y/LilyPond/raw/main/audio/hanon01.aac)
 
 <audio controls src="https://github.com/rice8y/LilyPond/raw/main/audio/hanon01.aac"></audio>
 
