@@ -1,11 +1,11 @@
 # LilyPond
 
 - [LilyPond](#lilypond)
-  - [LilyPondとは](#lilypondとは)
-  - [LilyPondの導入](#lilypondの導入)
-  - [LilyPondの使い方](#lilypondの使い方)
-  - [LilyPondによる楽譜作成例](#lilypondによる楽譜作成例)
-    - [Hanon No.1](#hanon-no1)
+- [LilyPondとは](#lilypondとは)
+- [LilyPondの導入](#lilypondの導入)
+- [LilyPondの使い方](#lilypondの使い方)
+- [LilyPondによる楽譜作成例](#lilypondによる楽譜作成例)
+  - [Hanon No.1](#hanon-no1)
 
 ## LilyPondとは
 
