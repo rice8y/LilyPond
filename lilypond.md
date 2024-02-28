@@ -12,8 +12,8 @@
     - [ハ音記号(C clef)](#ハ音記号c-clef)
   - [音符](#音符)
   - [付点音符](#付点音符)
-  - [付点休符](#付点休符)
   - [休符](#休符)
+  - [付点休符](#付点休符)
   - [変化記号](#変化記号)
   - [連符](#連符)
 - [LilyPondによる楽譜作成例](#lilypondによる楽譜作成例)
@@ -278,19 +278,6 @@ lilypond sample.ly
 
 <img src="images/c2.-8..png" width="50%">
 
-### 付点休符
-
-付点休符は`r.`のように`.`を付け加えて指定する. 
-
-```cmd
-\relative c' {
-    \clef treble
-    r2. r4. r8.
-}
-```
-
-<img src="images/r2.-8..png" width="50%">
-
 ### 休符
 
 休符の長さは`r4`のように休符を指定する`r`に数字を付け加えて指定する. 
@@ -303,6 +290,19 @@ lilypond sample.ly
 ```
 
 <img src="images/r1-32.png" width="90%">
+
+### 付点休符
+
+付点休符は`r.`のように`.`を付け加えて指定する. 
+
+```cmd
+\relative c' {
+    \clef treble
+    r2. r4. r8.
+}
+```
+
+<img src="images/r2.-8..png" width="50%">
 
 ### 変化記号
 
