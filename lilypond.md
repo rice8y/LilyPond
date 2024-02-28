@@ -499,6 +499,4 @@ MIDIをACCとMP3に変換したものを以下に示す.
 
 リンクをクリックして音声ファイルをダウンロードすると音声ファイルを聴くことが可能となる. なお, 内部アプリから本記事を閲覧している場合は, 外部ブラウザで開き直してからリンク先のファイルをダウンロードする必要がある. 
 
-iOS, Android：[hanon01.aac](https://github.com/rice8y/LilyPond/raw/main/audio/hanon01.aac)
-
-Windows, Mac：[hanon01.mp3](https://github.com/rice8y/LilyPond/raw/main/audio/hanon01.mp3)
+[hanon01.mp3](https://github.com/rice8y/LilyPond/raw/main/audio/hanon01.mp3)
